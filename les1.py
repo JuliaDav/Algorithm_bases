@@ -29,20 +29,21 @@ print(f'Уравнение y = {k}x + {b}')
 """
 alphab = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 'j':10, 'k':11, 'l':12, 'm':13, 'n':14,
 'o':15, 'p':16, 'q':17, 'r':18, 's':19, 't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26}
-user_letters = input('Введите две буквы английского алфавита: ')
+a = input('Введите первую букву: ')
+b = input('Введите вторую букву: ')
 
-lst_letters = user_letters.split(',') #преобразуем введенные буквы в список
-first_number = int(alphab[lst_letters[0]]) #определяем первую цифру
-second_number = int(alphab[lst_letters[1]]) #определяем вторую цифру
+first_number = int(alphab[a]) #определяем первую цифру
+second_number = int(alphab[b]) #определяем вторую цифру
 
-print(f'Буква {lst_letters[0]} соответствует номеру {first_number}, '
-      f'буква {lst_letters[1]} соответствует номеру {second_number},'
+print(f'Буква {a} соответствует номеру {first_number}, '
+      f'буква {b} соответствует номеру {second_number},'
       f'между ними {second_number - first_number} букв')
       
 #для задания №6 генерируем новый словарь вида {1:'a'}
 alphab_rotate = {v: k for k, v in alphab.items()}
 user_number = int(input('Введите число от 1 до 26: '))
-print(f'Числу {user_number} соответствует буква {alphab_rotate[user_number]}')
+a = alphab_rotate[user_number]
+print(f'Числу {user_number} соответствует буква {a}')
 """
 
 #7. По длинам трех отрезков, введенных пользователем, определить возможность существования треугольника,
