@@ -67,8 +67,25 @@ else:
 '''
 
 #8. Определить, является ли год, который ввел пользователем, високосным или невисокосным.
+'''
 user_year = int(input('Введите год для проверки: '))
 if user_year % 4 == 0 and user_year % 100 != 0 or user_year % 400 == 0:
     print('Год високосный')
 else:
     print('Год не високосный')
+'''
+#9. Вводятся три разных числа. Найти, какое из них является средним (больше одного, но меньше другого).
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+c = int(input('Введите третье число: '))
+
+med = 0
+if b > c and b < a or b < c and b > a:
+    med = b
+elif c > a and c < b or c < a and c > b:
+    med = c
+elif a > c and a < b or a < c and a > b:
+    med = a
+else:
+    pass
+print(med)
