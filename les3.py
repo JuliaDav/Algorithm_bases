@@ -67,12 +67,8 @@ N = 10
 for i in range(N):
     a.append(random.randint(-100,100))
 print(a)
+b = []
 for i in range(N):
     if a[i] < 0:
-        maxA = a[i]
-        if maxA > a[i]:
-            maxA = a[i]
-
-
-
-print(maxA)
+        b.append(a[i])
+print(f'Максимальный отрицательный элемент {max(b)}, позиция {a.index(max(b))}')
