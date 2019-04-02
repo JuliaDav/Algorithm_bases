@@ -60,7 +60,7 @@ print(f'Чаще всего ({maxN} раз) встречается число {a
 """
 
 #5. В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию в массиве.
-'''
+
 import random
 a = []
 N = 10
@@ -72,24 +72,31 @@ for i in range(N):
     if a[i] < 0:
         b.append(a[i])
 print(f'Максимальный отрицательный элемент {max(b)}, позиция {a.index(max(b))}')
-'''
+
 
 #6. В одномерном массиве найти сумму элементов, находящихся между минимальным и максимальным элементами.
 # Сами минимальный и максимальный элементы в сумму не включать.
-import random
-a = []
-N = 10
-for i in range(N):
-    a.append(random.randint(0,10))
-print(a)
-maxN = max(a)
-minN = min(a)
-indMax = a.index(maxN) + 1
-indMin = a.index(minN) + 1
-print(indMax, indMin)
-if indMax < indMin:
-    print(a[indMax:indMin-1])
-    print(sum(a[(indMax):indMin-1]))
-else:
-    print(a[indMin:indMax-1])
-    print(sum(a[indMin:indMax-1]))
+"""
+import timeit
+def main():
+    import random
+    a = []
+    N = 10
+    for i in range(N):
+        a.append(random.randint(0,10))
+    print(a)
+    maxN = max(a)
+    minN = min(a)
+    indMax = a.index(maxN) + 1
+    indMin = a.index(minN) + 1
+    print(indMax, indMin)
+    if indMax < indMin:
+        print(a[indMax:indMin-1])
+        print(sum(a[(indMax):indMin-1]))
+    else:
+        print(a[indMin:indMax-1])
+        print(sum(a[indMin:indMax-1]))
+
+print(timeit.timeit("main()", setup="from __main__ import main", number = 100000))
+#cProfile.run('main()')
+"""
